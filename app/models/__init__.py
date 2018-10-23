@@ -11,7 +11,7 @@ for filename in os.listdir(folder):
     module, ext = os.path.splitext(filename)
     classname = module.replace("model", "").replace("_", " ").title().replace(
         " ", "")
-
+    print ("IMPORTING %s %s" % (module,classname))
     # yapf: disable
     exec ("from %s import %s" % (module, classname)) # pylint: disable=exec-used
     # yapf: enable
